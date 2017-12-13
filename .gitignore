@@ -1,0 +1,6 @@
+.nfs*
+INCA_libs/
+nWaveLog
+*.log
+*.fsdb
+*.key
