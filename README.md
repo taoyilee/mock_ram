@@ -26,7 +26,7 @@ Include the snippet in your verilog case statement to use it
 	always@(posedge clk)
 	begin
 		case(addr)
-			*`include "ifmap_block.v"*
+			`include "ifmap_block.v" // use include statement
 			default: oport <= 16'hXXXX;
 		endcase
 	end
