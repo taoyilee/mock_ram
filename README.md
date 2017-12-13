@@ -17,6 +17,22 @@ optional arguments:
   -w w         Width of word-line
   -l l         Length of memory
 ```
+
+### Sample output of pseudo-random memory block generator
+
+```Verilog
+65517: oport <= 16'hA723;
+65518: oport <= 16'h3563;
+65519: oport <= 16'hA155;
+65520: oport <= 16'h3CBB;
+65521: oport <= 16'h554C;
+65522: oport <= 16'h039B;
+65523: oport <= 16'h19F9;
+65524: oport <= 16'hA334;
+65525: oport <= 16'hE45D;
+65526: oport <= 16'hE3F1;
+```
+
 Include the snippet in your verilog case statement to use it
 ```Verilog
 module ifmap_rom(clk, addr, oport);
@@ -32,9 +48,9 @@ module ifmap_rom(clk, addr, oport);
 		endcase
 	end
 endmodule
-
 ```
-Usage:
+
+##Usage
 
 ```bash
 make gen_ram
@@ -46,3 +62,4 @@ Writing to "ifmap_block.v", generating 65536 words with width 16
 ./ram_prgen.py -w 16 -l 1024 "weight_block"
 Writing to "weight_block.v", generating 1024 words with width 16
 ```
+
