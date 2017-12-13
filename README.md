@@ -50,7 +50,7 @@ module ifmap_rom(clk, addr, oport);
 endmodule
 ```
 
-##Usage
+## Usage
 
 ```bash
 make gen_ram
