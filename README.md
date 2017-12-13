@@ -1,7 +1,8 @@
 # mock_ram
 
 ## Workflow
-Python script ram_prgen will generate Verilog snippets basedon given output width and length. 
+Python (Version 3.4) script ram_prgen.py will generate Verilog snippets based on given output width and length. 
+
 ```
 [user@pc mock_rom]$ ./ram_prgen.py -h
 usage: ram_prgen.py [-h] [-w w] [-l l] output_file
@@ -16,7 +17,22 @@ optional arguments:
   -w w         Width of word-line
   -l l         Length of memory
 ```
+Include the snippet in your verilog case statement to use it
+```Verilogmodule ifmap_rom(clk, addr, oport);
+	input clk;
+	input [15:0] addr;
+	output reg [15:0] oport;
+	
+	always@(posedge clk)
+	begin
+		case(addr)
+			*`include "ifmap_block.v"*
+			default: oport <= 16'hXXXX;
+		endcase
+	end
+endmodule
 
+```
 Usage:
 
 ```bash
