@@ -18,7 +18,8 @@ optional arguments:
   -l l         Length of memory
 ```
 Include the snippet in your verilog case statement to use it
-```Verilogmodule ifmap_rom(clk, addr, oport);
+```Verilog
+module ifmap_rom(clk, addr, oport);
 	input clk;
 	input [15:0] addr;
 	output reg [15:0] oport;
